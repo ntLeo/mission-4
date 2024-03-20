@@ -1,0 +1,15 @@
+const express = require("express");
+const carsControllers = require("../controllers/carsControllers");
+const router = express.Router();
+
+router.get("/get-cars", carsControllers.getAllCars);   // get all cars, all list in the data base
+
+router.get("/get-cars-by-model", carsControllers.getCarModel); // by model
+
+router.get("/get-cars-by-year", carsControllers.getCarYear); // by year
+
+router.get("/search", carsControllers.findOneCar);  // search for one car not really 
+
+router.get("/search-all", carsControllers.findAllCarsModelYear);
+
+module.exports = router;
